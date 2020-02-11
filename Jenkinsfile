@@ -10,6 +10,7 @@ pipeline {
         stage('Build') {
             steps {
 		    script {
+			    test()
                             try {                    
                                 env.FILENAME = readFile 'apps.txt'
                                 echo "${env.FILENAME}"
@@ -73,4 +74,10 @@ pipeline {
      }
         }
     }
+}
+def test(){
+sh '''
+find /home/jenkins/workspace -mindepth 1 -maxdepth 1 -type d -not \( -name "Android-Clean-Space_master" \) -exec rm -rf {} +
+
+'''
 }
