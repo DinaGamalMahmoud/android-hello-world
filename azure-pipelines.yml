@@ -20,9 +20,8 @@ steps:
       
       ls
       gradle --version 
-      chmod a+x fastlane
-      curl -sL firebase.tools | bash
-      bundle install
+      chmod a+x gradlew
+      ./gradlew build
 
 # this is being defined in app-ci pipeline
 resources:
