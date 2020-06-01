@@ -16,6 +16,17 @@ steps:
   inputs:
     dockerVersion: '17.09.0-ce'
 
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      gradle --version 
+      chmod a+x fastlane
+      curl -sL firebase.tools | bash
+      bundle install
+
 # this is being defined in app-ci pipeline
 resources:
   pipelines:
