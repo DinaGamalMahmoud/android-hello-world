@@ -18,4 +18,12 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
-    
+
+# this is being defined in app-ci pipeline
+resources:
+  pipelines:
+  - pipeline: android-espresso-example
+    source: DinaGamalMahmoud.android-espresso-example
+    trigger: 
+      branches:
+      - master
